@@ -7,6 +7,9 @@ pipeline {
     environment {
         course = "Jenkins"  
     }
+     options {
+        disableConcurrentBuilds()
+    }
     // Build
     stages {
         stage('Build') {
@@ -14,6 +17,7 @@ pipeline {
                script {
                     echo 'Building..'
                     echo "Course name is ${course}"
+                    sleep 5
                 }
             }
         }
