@@ -41,6 +41,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+                expression { return params.DEPLOY }
+            }
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
